@@ -7,6 +7,8 @@
     "bluebird": "",
     "java": "",
     "lodash": "",
-    "restify": ""
+    "pm2": "",
+    "restify": "",
+    "winston": ""
   }
 }
