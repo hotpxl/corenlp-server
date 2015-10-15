@@ -6,7 +6,7 @@ RUN add-apt-repository --yes ppa:webupd8team/java
 RUN curl --silent --location https://deb.nodesource.com/setup_4.x | bash -
 RUN apt-get update
 RUN apt-get install --yes nodejs build-essential oracle-java8-installer python python-dev
-COPY corenlp-server /corenlp-server
+COPY . /corenlp-server
 RUN cd corenlp-server; npm install
 
 EXPOSE 8080
