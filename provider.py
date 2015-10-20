@@ -7,7 +7,7 @@ class CoreNLPProvider(object):
     def __init__(self, server_addr):
         self.server_addr = server_addr
 
-    def process(self, text):
+    def pos_tag(self, text):
         payload = {'text': text}
         r = requests.post(self.server_addr, json=payload)
         result = r.json()
@@ -17,5 +17,5 @@ class CoreNLPProvider(object):
             raise ValueError('unrecognized format')
 
 if __name__ == '__main__':
-    c = CoreNLPProvider('http://localhost:8080/parse')
-    print(c.process('Nice day today'))
+    c = CoreNLPProvider('http://somewhere/parse')
+    print(c.pos_tag('Nice day today'))
