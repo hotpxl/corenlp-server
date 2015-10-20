@@ -2,6 +2,12 @@
 
 This is a server wrapper for the [Stanford CoreNLP](http://nlp.stanford.edu/software/corenlp.shtml).
 
+## Dependencies
+
+If you use [Docker](https://www.docker.com/), nothing else is needed.
+
+If you decide to install it directly, please take a look at `Dockerfile` for how to set up from scratch.
+
 ## Docker usage
 
 With the `Dockerfile`, you could spawn a Docker container easily.
@@ -16,11 +22,13 @@ Run the following commands.
 
 ## Installation
 
-If you decide to install manually, just run `npm install` to resolve all dependencies.
+As before, if you chose the Docker way, you do not have to do anything to install.
+
+If you decided to install manually, just run `npm install` to resolve all dependencies.
 
 ## Usage
 
-Run the following command to spawn a [pm2](https://github.com/Unitech/pm2) supervisor of the server process.
+Run the following command (or script `start-server.sh` equivalently) to spawn a [pm2](https://github.com/Unitech/pm2) supervisor of the server process.
 
     npm start
 
