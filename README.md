@@ -4,6 +4,8 @@ This is a server wrapper for the [Stanford CoreNLP](http://nlp.stanford.edu/soft
 
 ## Dependencies
 
+For client-side Python script, you need in install [Requests](http://docs.python-requests.org/en/latest/).
+
 If you use [Docker](https://www.docker.com/), nothing else is needed.
 
 If you decide to install it directly, please take a look at `Dockerfile` for how to set up from scratch.
