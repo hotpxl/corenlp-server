@@ -10,6 +10,8 @@ class CoreNLPProvider(object):
     def pos_tag(self, text):
         payload = {'text': text}
         r = requests.post(self.server_addr, json=payload)
+        if r.status_code != 200:
+            raise ValueError('unrecognized format')
         result = r.json()
         if 'result' in result:
             return [(i[0], i[1], (i[2][0], i[2][1])) for i in result['result']]
@@ -17,5 +19,5 @@ class CoreNLPProvider(object):
             raise ValueError('unrecognized format')
 
 if __name__ == '__main__':
-    c = CoreNLPProvider('http://somewhere/parse')
+    c = CoreNLPProvider('http://localhost:8080/parse')
     print(c.pos_tag('Nice day today'))

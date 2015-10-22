@@ -16,7 +16,7 @@ server.use(restify.bodyParser());
 server.post('/parse', function(req, res, next) {
   logger.info('request with params', req.params);
   if (typeof(req.params.text) !== 'string') {
-    res.send({
+    res.send(400, {
       error: 'unrecognized format'
     });
   } else {
