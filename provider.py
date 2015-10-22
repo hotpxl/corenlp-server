@@ -12,7 +12,7 @@ class CoreNLPProvider(object):
         r = requests.post(self.server_addr, json=payload)
         result = r.json()
         if 'result' in result:
-            return [(i[0], i[1], (int(i[2][0]), int(i[2][1]))) for i in result['result']]
+            return [(i[0], i[1], (i[2][0], i[2][1])) for i in result['result']]
         else:
             raise ValueError('unrecognized format')
 
