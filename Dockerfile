@@ -6,7 +6,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
     curl --silent --location https://deb.nodesource.com/setup_4.x | bash - && \
     apt-get update --yes && \
     apt-get install --yes nodejs build-essential oracle-java8-installer python python-dev && \
-    apt-get --yes dist-upgrade
+    apt-get dist-upgrade --yes
 COPY . /corenlp-server
 RUN cd corenlp-server; npm install
 
