@@ -4,7 +4,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
     apt-get install --yes curl software-properties-common && \
     add-apt-repository --yes ppa:webupd8team/java && \
     curl --silent --location https://deb.nodesource.com/setup_4.x | bash - && \
-    apt-get update && \
+    apt-get update --yes && \
     apt-get install --yes nodejs build-essential oracle-java8-installer python python-dev && \
     apt-get dist-upgrade --yes
 COPY . /corenlp-server
