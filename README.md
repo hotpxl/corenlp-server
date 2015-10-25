@@ -32,12 +32,10 @@ If you decided to install manually, just run `npm install` to resolve all depend
 
 ## Usage
 
-Run the following command (or script `start-server.sh` equivalently) to spawn a [pm2](https://github.com/Unitech/pm2) supervisor of the server process.
+Run the following command (or script `start-server.sh` equivalently).
 
-    npm start
+    node index.js
 
 That's it!
 
-If you are inside a Docker container, exiting the shell would terminate the background process.
-
-Please invoke <kbd>Ctrl</kbd>+<kbd>p</kbd> <kbd>Ctrl</kbd>+<kbd>q</kbd> to detach.
+If you are inside a Docker container, invoke <kbd>Ctrl</kbd>+<kbd>p</kbd> <kbd>Ctrl</kbd>+<kbd>q</kbd> to detach.

@@ -1,13 +1,12 @@
 {
   "private": true,
   "scripts": {
-    "start": "pm2 --no-daemon start index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "bluebird": "",
     "java": "",
     "lodash": "",
-    "pm2": "",
     "restify": "",
     "winston": ""
   }
