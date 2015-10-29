@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Author: Yutian Li
 from __future__ import print_function
 from __future__ import absolute_import
 import requests
@@ -17,7 +20,3 @@ class CoreNLPProvider(object):
             return [(i[0], i[1], (i[2][0], i[2][1])) for i in result['result']]
         else:
             raise ValueError('unrecognized format')
-
-if __name__ == '__main__':
-    c = CoreNLPProvider('http://localhost:8080/parse')
-    print(c.pos_tag('Nice day today'))
