@@ -41,13 +41,17 @@ var processText = function(text) {
       })
       .then(JSON.parse)
       .then(function(result) {
-        return _.map(result.sentences[0].tokens, function(i) {
-          return [
-            i.word
-          , i.pos
-          , [ parseInt(i.characterOffsetBegin)
-            , parseInt(i.characterOffsetEnd)]];
-        });
+        if (result.sentences.length == 0) {
+          return [];
+        } else {
+          return _.map(result.sentences[0].tokens, function(i) {
+            return [
+              i.word
+            , i.pos
+            , [ parseInt(i.characterOffsetBegin)
+              , parseInt(i.characterOffsetEnd)]];
+          });
+        }
       });
     });
   });
