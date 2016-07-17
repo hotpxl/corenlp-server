@@ -6,17 +6,22 @@ from __future__ import absolute_import
 import requests
 import json
 
+
 class CoreNLPProvider(object):
     def __init__(self, server_addr):
         self.server_addr = server_addr
 
     def pos_tag(self, text):
-        payload = {'text': text}
-        r = requests.post(self.server_addr, json=payload)
+        params = {
+            "tokenize.whitespace": "true",
+            "annotators": "tokenize,ssplit,pos",
+            "outputFormat": "json"
+        }
+        r = requests.post(
+            self.server_addr,
+            params={'properties': json.dumps(params)},
+            data=text)
         if r.status_code != 200:
-            raise ValueError('unrecognized format')
+            raise ValueError('Unrecognized format.')
         result = r.json()
-        if 'result' in result:
-            return [(i[0], i[1], (i[2][0], i[2][1])) for i in result['result']]
-        else:
-            raise ValueError('unrecognized format')
+        return result
