@@ -7,7 +7,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
     apt-get update --yes && \
     apt-get install --yes build-essential oracle-java8-installer python python-dev && \
     apt-get dist-upgrade --yes
-COPY ./stanford-corenlp-full-2015-12-09 /corenlp-server
+COPY ./stanford-corenlp-full-2016-10-31 /corenlp-server
 WORKDIR /corenlp-server
 
 EXPOSE 80
